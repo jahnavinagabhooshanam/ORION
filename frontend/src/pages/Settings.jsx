@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import { Save, User, Bell, Shield, Database, Globe } from 'lucide-react';
 
-const SettingsCard = ({ title, subtitle, icon: Icon, children }) => (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 space-y-4">
-        <div className="flex items-center gap-3 border-b border-slate-50 pb-4">
-            <div className="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
-                <Icon size={20} />
+// eslint-disable-next-line no-unused-vars
+const SettingsCard = ({ title, subtitle, icon: LucideIcon, children }) => {
+    return (
+        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 space-y-4">
+            <div className="flex items-center gap-3 border-b border-slate-50 pb-4">
+                <div className="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
+                    <LucideIcon size={20} />
+                </div>
+                <div>
+                    <h3 className="font-bold text-slate-800">{title}</h3>
+                    <p className="text-sm text-slate-500">{subtitle}</p>
+                </div>
             </div>
-            <div>
-                <h3 className="font-bold text-slate-800">{title}</h3>
-                <p className="text-sm text-slate-500">{subtitle}</p>
+            <div className="pt-2">
+                {children}
             </div>
         </div>
-        <div className="pt-2">
-            {children}
-        </div>
-    </div>
-);
+    );
+};
 
 const Settings = () => {
     const [notifications, setNotifications] = useState(true);

@@ -3,16 +3,19 @@ import { LayoutDashboard, Activity, AlertTriangle, Users, Settings, LogOut } fro
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 
-const SidebarItem = ({ icon: Icon, label, active, onClick }) => (
-    <div
-        className={`flex items-center space-x-3 p-3 rounded-lg cursor-pointer transition-colors ${active ? 'bg-indigo-900 text-white shadow-lg' : 'text-gray-500 hover:bg-gray-100'
-            }`}
-        onClick={onClick}
-    >
-        <Icon size={20} />
-        <span className="font-medium">{label}</span>
-    </div>
-);
+// eslint-disable-next-line no-unused-vars
+const SidebarItem = ({ icon: LucideIcon, label, active, onClick }) => {
+    return (
+        <div
+            className={`flex items-center space-x-3 p-3 rounded-lg cursor-pointer transition-colors ${active ? 'bg-indigo-900 text-white shadow-lg' : 'text-gray-500 hover:bg-gray-100'
+                }`}
+            onClick={onClick}
+        >
+            <LucideIcon size={20} />
+            <span className="font-medium">{label}</span>
+        </div>
+    );
+};
 
 const DashboardLayout = ({ children }) => {
     const { user, logout } = useAuth();

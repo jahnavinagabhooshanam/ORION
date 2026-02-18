@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
-import { AlertTriangle, TrendingUp, Brain, CheckCircle } from 'lucide-react';
+import { TrendingUp, Brain, CheckCircle } from 'lucide-react';
 
 const RiskAnalysis = () => {
     const [riskLogs, setRiskLogs] = useState([]);
     const [departments, setDepartments] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [selectedDept, setSelectedDept] = useState(null);
     const [aiInsight, setAiInsight] = useState(null);
 
     useEffect(() => {
